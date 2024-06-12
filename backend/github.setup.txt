@@ -1,0 +1,7 @@
+echo "# Hotel-Booking-Full-Stack-MERN" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/OnkarJagatp2001/Hotel-Booking-Full-Stack-MERN.git
+git push -u origin main

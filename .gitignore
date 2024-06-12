@@ -1,0 +1,20 @@
+node_modules
+.env
+.env.e2e
+.vscode
+dist
+
+# Node modules
+/frontend/node_modules
+/backend/node_modules
+
+# Build directories
+/frontend/build
+/backend/build
+
+# Environment variables
+/frontend/.env
+/backend/.env
+
+# Logs
+*.log
