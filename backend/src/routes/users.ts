@@ -12,8 +12,8 @@ router.post("/register", [
     check("password", "Password with 6 or more characters required").isLength({ min: 6 })
 ], async (req: Request, res: Response) => {
     const errors = validationResult(req);
-    if(!errors.isEmpty()){
-        return res.status(400).json({message:errors.array()})
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ message: errors.array() })
     }
     try {
         let user = await User.findOne({
@@ -40,7 +40,7 @@ router.post("/register", [
 
         //we send http cookies along side with res so not need to explicitly send the res
         //just send status code
-        res.status(200).send({message:"User registered OK"})
+        res.status(200).send({ message: "User registered OK" })
     } catch (error) {
         console.log(error);
         return res.status(500).send({ message: "Something went wrong" })
