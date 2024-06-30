@@ -17,6 +17,8 @@ const AppContext = React.createContext<AppContext | undefined>(undefined);
 export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
     const [toast,setToast] = useState<ToastMessage | undefined >(undefined);
 
+    //executes when the actions causes the app to be rendered
+    // Whenever the user changes the root or app to be refreshed
     const { isError } = useQuery("validateToken",apiClient.validateToken,{
         retry: false,
     })
