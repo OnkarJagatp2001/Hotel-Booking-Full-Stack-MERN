@@ -3,12 +3,15 @@ import { Link } from "react-router-dom";
 import * as apiClient from '../api-client'; 
 import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
+import { HotelType } from "../../../backend/src/shared/types";
 
 const MyHotels = () =>{
     // made name of reponce data to hotel data
     const { data: hotelData } = useQuery("fetchMyHotels",apiClient.fetchMyHotels,{
         onError: () =>{}
     })
+    // const hotelData: HotelType[] | undefined; here need to check
+    console.log(hotelData)
     if(!hotelData){
         return <span>No Hotel Found</span>
     }
@@ -20,6 +23,7 @@ const MyHotels = () =>{
             </span>
             <div className="grid grid-cols-1 gap-8">
                 { hotelData?.map((hotel)=>(
+                    
                     <div className="flex flex-col justify-between border border-slate-300 rounded-lg p-8 gap-5">
                         <h2 className="text-2xl font-bold">{hotel.name}</h2>
                         <div className="whitespace-pre-line">{hotel.description}</div>
@@ -36,17 +40,17 @@ const MyHotels = () =>{
 
                             <div className="border border-slate-300 rounded-sm p-3 flex items-center">
                                 <BiMoney className="mr-1"/>
-                                ${hotel.pricePerNight} per night
+                                ${hotel.pricePerNight.toString()} per night
                             </div>
 
                             <div className="border border-slate-300 rounded-sm p-3 flex items-center">
                                 <BiHotel className="mr-1"/>
-                                {hotel.adultCount} adults , {hotel.childCount} children 
+                                {hotel.adultCount.toString()} adults , {hotel.childCount.toString()} children 
                             </div>
 
                             <div className="border border-slate-300 rounded-sm p-3 flex items-center">
                                 <BiStar className="mr-1"/>
-                                {hotel.starRating} Star Rating
+                                {hotel.starRating.toString()} Star Rating
                             </div>
                         </div>
                     <span className="flex justify-end">
