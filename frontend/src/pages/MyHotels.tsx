@@ -3,15 +3,12 @@ import { Link } from "react-router-dom";
 import * as apiClient from '../api-client'; 
 import { BsBuilding, BsMap } from "react-icons/bs";
 import { BiHotel, BiMoney, BiStar } from "react-icons/bi";
-import { HotelType } from "../../../backend/src/shared/types";
 
 const MyHotels = () =>{
     // made name of reponce data to hotel data
     const { data: hotelData } = useQuery("fetchMyHotels",apiClient.fetchMyHotels,{
         onError: () =>{}
     })
-    // const hotelData: HotelType[] | undefined; here need to check
-    console.log(hotelData)
     if(!hotelData){
         return <span>No Hotel Found</span>
     }
