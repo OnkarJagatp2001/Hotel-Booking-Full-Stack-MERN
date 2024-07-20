@@ -1,17 +1,18 @@
 
 export type HotelType = {
-    _id: String,
-    userId: String,
-    name: String,
-    city: String,
-    country: String,
-    description: String,
-    type: String,
-    adultCount: Number,
-    childCount: Number,
-    facilities: String[],
-    pricePerNight: Number,
-    starRating: Number,
-    imageUrls: String[],
+    _id: string;
+    userId: string;
+    name: string;
+    city: string;
+    country: string;
+    description: string;
+    type: string;
+    adultCount: number;
+    childCount: number;
+    facilities: string[];
+    pricePerNight: number;
+    starRating: number;
+    imageUrls: string[];
     lastUpdated: Date;
-}
+    // bookings: BookingType[];
+};
