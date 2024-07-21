@@ -1,1 +1,1 @@
-Dev in Progress..
+Development is in Progress..
